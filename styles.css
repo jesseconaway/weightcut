@@ -9,12 +9,9 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     font-family: "Roboto Slab", serif;
     font-weight: bold;
 }
-header h1 {
-    font-size: 3rem;
-    line-height: 2.7rem;
-    margin-bottom: 15px;
-}
+
 /* Side Nav */
+
 .sideNav {
     background-color: rgba(110,110,110,1);
     padding: 15px 0 0 0;
@@ -29,14 +26,13 @@ header h1 {
 }
 .sideNavBackground {
     background-color: rgba(110,110,110,1);
-    padding: 0;
     margin: 0;
     width: 230px;
     position: fixed;
     left: -230px;
     top: 0;
     height: 100%;
-    z-index: 1;
+    z-index: -99;
     transition: 0.5s;
 }
 .sideNav * {
@@ -106,6 +102,7 @@ header h1 {
 }
 
 /* Homepage Title Upper Left */
+
 .pageTitle {
     background-color: black;
     padding: 15px;
@@ -129,7 +126,9 @@ header h1 {
 .pageTitleSubtitle {
     font-size: 16px;
 }
+
 /* Top Nav */
+
 .topNav {
     background-color: rgba(110,110,110,1);
     display: none;
@@ -141,19 +140,17 @@ header h1 {
     padding: 0;
     overflow: hidden;
     background-color: rgba(110,110,110,1);
-  }
-  
+}
 .topNav ul li {
     float: left;
-  }
-  
+}
 .topNav ul li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
 .topNav ul li a img {
     height: 25px;
     width: 25px;
@@ -161,24 +158,29 @@ header h1 {
 .topNav .nav-item:hover {
     background-color: rgba(60,60,60,1);
 }
-footer {
-    clear: both;
-    background-color: rgba(0,0,0,1);
-    color: white;
-    height: 50px;
-    padding: 10px;
-}
+
+/* Main Content */
+
 main {
     min-height: 90vh;
     background-color: rgba(255,255,255,1);
     padding: 20px;
+}
+header h1 {
+    font-size: 3rem;
+    line-height: 2.7rem;
+    margin-bottom: 30px;
+}
+.pageSectionHeader {
+    margin-top: 30px;
+    border-bottom: 1px solid black;
 }
 .homeCard {
     background-color: rgba(200,200,200,1);
     padding: 16px 21px 1px 25px;
     border-radius: 15px;
     width: 300px;
-    margin-bottom: 20px;
+    margin: 20px 0 10px 0;
 }
 .homeCard a {
     text-decoration: none;
@@ -192,6 +194,64 @@ main {
     width: 130px;
     float: left;
     margin: 7px 15px 0px 0px;
+}
+.calculatorCard {
+    border-radius: 15px;
+    border: 2px solid Black;
+    padding: 0;
+    overflow: hidden;
+}
+.calculatorCardHeader {
+    background-color: rgba(200,200,200,1);
+    padding: 10px 15px 5px 15px;
+    margin: 0;
+    border-bottom: 2px solid black;
+}
+.calculatorCardHeader h3 {
+    font-size: 1.6rem;
+}
+.calculatorCard a {
+    text-decoration: none;
+    color: black;
+}
+.calculatorCard a:hover {
+    color: rgba(60,60,60,1);
+}
+.calculatorCard p {
+    padding: 10px;
+    margin: 0;
+}
+
+/* Footer */
+
+footer {
+    clear: both;
+    background-color: rgba(0,0,0,1);
+    color: white;
+}
+footer ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0,0,0,1);
+}
+footer a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+footer a:hover {
+    color: white;
+}
+footer img {
+    height: 25px;
+    width: 25px;
+}
+footer .nav-item:hover {
+    background-color: rgba(60,60,60,1);
 }
 
 
@@ -224,16 +284,8 @@ main {
     position: static;
 }
 .sideNavBackground {
-    background-color: rgba(110,110,110,1);
-    padding: 0;
-    margin: 0;
-    width: 230px;
-    position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
-    z-index: -99;
-    transition: 0s;
 }
 .mobileMenuIcon {
     display: none;
@@ -243,10 +295,10 @@ main {
 }
 main {
     margin-left: 230px;
-    padding: 15px 25px;
+    padding: 25px 35px;
 }
 .homeCard {
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 
