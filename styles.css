@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     width: 230px;
     margin: 0;
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     left: -230px;
     overflow-x: hidden;
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     left: -230px;
     top: 0;
     height: 100%;
-    z-index: -99;
+    z-index: 2;
     transition: 0.5s;
 }
 .sideNav * {
@@ -82,6 +82,9 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     padding: 8px;
     background-color: rgba(110,110,110,1);
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 .closeMenuIcon {
     display: none;
@@ -167,6 +170,7 @@ main {
     padding: 20px;
 }
 header h1 {
+    margin-top: 50px;
     font-size: 3rem;
     line-height: 2.7rem;
     margin-bottom: 30px;
@@ -180,7 +184,7 @@ header h1 {
     padding: 16px 21px 1px 25px;
     border-radius: 15px;
     width: 300px;
-    margin: 20px 0 10px 0;
+    margin: 20px auto 10px auto;
 }
 .homeCard a {
     text-decoration: none;
@@ -197,27 +201,31 @@ header h1 {
 }
 .calculatorCard {
     border-radius: 15px;
+    background-color: rgba(90,90,90,1);
     border: 2px solid Black;
     padding: 0;
     overflow: hidden;
+    margin: 15px 0px;
 }
 .calculatorCardHeader {
-    background-color: rgba(200,200,200,1);
+    background-color: rgba(60,60,60,1);
     padding: 10px 15px 5px 15px;
     margin: 0;
     border-bottom: 2px solid black;
 }
 .calculatorCardHeader h3 {
     font-size: 1.6rem;
+    color: white;
 }
 .calculatorCard a {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 .calculatorCard a:hover {
-    color: rgba(60,60,60,1);
+    color: rgba(200,200,200,1);
 }
 .calculatorCard p {
+    color: white;
     padding: 10px;
     margin: 0;
 }
@@ -259,13 +267,15 @@ footer .nav-item:hover {
 @media (min-width: 576px) {
 .homeCard {
     width: 500px;
+    margin: 20px 0 10px 20px;
 }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 .homeCard {
-    width: 700px;
+    width: 600px;
+    margin-left: 30px;
 }
 }
 
@@ -281,11 +291,15 @@ footer .nav-item:hover {
     margin: 0;
     float: left;
     clear: left;
-    position: static;
+    position: sticky;
+    top: 0;
 }
 .sideNavBackground {
+    width: 230px;
     left: 0;
     top: 0;
+    z-index: -99;
+    transition: 0s;
 }
 .mobileMenuIcon {
     display: none;
@@ -297,8 +311,12 @@ main {
     margin-left: 230px;
     padding: 25px 35px;
 }
+header h1 {
+    margin-top: 0;
+}
 .homeCard {
     margin-left: 40px;
+    width: 700px;
 }
 
 
