@@ -2,7 +2,8 @@ var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 var sideNav = document.getElementById("sideNav");
 var sideNavBackground = document.getElementById("sideNavBackground");
-var menuIcon = document.getElementById("openMenuIcon");
+var openMenuIcon = document.getElementById("openMenuIcon");
+var closeMenuIcon = document.getElementById("closeMenuIcon");
 
 for (i = 0; i < dropdown.length; i++) {
   dropdown[i].addEventListener("click", function() {
@@ -24,16 +25,20 @@ for (i = 0; i < dropdown.length; i++) {
 function openMenu() {
   sideNav.style.left = "0px";
   sideNavBackground.style.left = "0px";
-  menuIcon.style.left = "230px";
-}
+  openMenuIcon.style.display = "none";
+  closeMenuIcon.style.display = "block";
+  closeMenuIcon.style.left = "230px";
 
 document.addEventListener("click", function(event){
-  var sideNavContents = sideNav.querySelectorAll("a, ul, li, img, div");
-  if (event.target != sideNav && event.target != sideNavContents && event.target != menuIcon) {
+  sideNav.addEventListener("click", function(event){
+  event.stopPropagation();
+  })
+  if (event.target != sideNav && event.target != openMenuIcon && event.target != sideNavBackground) {
     sideNav.style.left = "-230px";
     sideNavBackground.style.left = "-230px";
-    menuIcon.style.left = "0px";
+    openMenuIcon.style.display = "block";
+    closeMenuIcon.style.display = "none";
   }
 })
-
+}
 

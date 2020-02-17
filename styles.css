@@ -1,13 +1,23 @@
 body {
     background-color: white;
 }
-/* Side Nav */
 * {
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
+h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
+    font-family: "Roboto Slab", serif;
+    font-weight: bold;
+}
+header h1 {
+    font-size: 3rem;
+    line-height: 2.7rem;
+    margin-bottom: 15px;
+}
+/* Side Nav */
 .sideNav {
     background-color: rgba(110,110,110,1);
-    padding-right: 0;
+    padding: 15px 0 0 0;
     width: 230px;
     margin: 0;
     position: fixed;
@@ -25,7 +35,7 @@ body {
     position: fixed;
     left: -230px;
     top: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 1;
     transition: 0.5s;
 }
@@ -76,6 +86,14 @@ body {
     padding: 8px;
     background-color: rgba(110,110,110,1);
     width: 100%;
+}
+.closeMenuIcon {
+    display: none;
+    position: relative;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
     cursor: pointer;
 }
 .openMenuIcon {
@@ -84,7 +102,9 @@ body {
     height: 30px;
     width: 30px;
     transition: 0.5s;
+    cursor: pointer;
 }
+
 /* Homepage Title Upper Left */
 .pageTitle {
     background-color: black;
@@ -145,20 +165,48 @@ footer {
     clear: both;
     background-color: rgba(0,0,0,1);
     color: white;
+    height: 50px;
+    padding: 10px;
 }
 main {
     min-height: 90vh;
-    background-color: rgba(220,220,255,1);
+    background-color: rgba(255,255,255,1);
+    padding: 20px;
 }
+.homeCard {
+    background-color: rgba(200,200,200,1);
+    padding: 16px 21px 1px 25px;
+    border-radius: 15px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.homeCard a {
+    text-decoration: none;
+    color: black;
+}
+.homeCard a:hover {
+    color: rgba(60,60,60,1);
+}
+.homeCardImg {
+    height: 130px;
+    width: 130px;
+    float: left;
+    margin: 7px 15px 0px 0px;
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-
+.homeCard {
+    width: 500px;
+}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+.homeCard {
+    width: 700px;
+}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -183,8 +231,9 @@ main {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     z-index: -99;
+    transition: 0s;
 }
 .mobileMenuIcon {
     display: none;
@@ -194,6 +243,10 @@ main {
 }
 main {
     margin-left: 230px;
+    padding: 15px 25px;
+}
+.homeCard {
+    margin-left: 30px;
 }
 
 
