@@ -1,6 +1,10 @@
 body {
     background-color: white;
 }
+:root {
+    --primary: rgba(50,70,80,1);
+    --secondary: rgba(170,190,200,1);
+}
 * {
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
@@ -13,7 +17,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
 /* Side Nav */
 
 .sideNav {
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
     padding: 15px 0 0 0;
     width: 230px;
     margin: 0;
@@ -23,9 +27,10 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     left: -230px;
     overflow-x: hidden;
     transition: 0.5s;
+    border-right: 3px solid black;
 }
 .sideNavBackground {
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
     margin: 0;
     width: 230px;
     position: fixed;
@@ -34,6 +39,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     height: 100%;
     z-index: 2;
     transition: 0.5s;
+    border-right: 3px solid black;
 }
 .sideNav * {
     color: white;
@@ -50,7 +56,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     float: left;
 }
 .sideNav a:hover {
-    color: rgba(200,200,200,1)
+    color: var(--secondary)
 }
 .dropdown-btn {
     display: inline-block;
@@ -80,7 +86,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
 }
 .mobileMenuIcon {
     padding: 8px;
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
     width: 100%;
     position: fixed;
     top: 0;
@@ -107,12 +113,13 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
 /* Homepage Title Upper Left */
 
 .pageTitle {
-    background-color: black;
-    padding: 15px;
-    padding-left: 25px;
+    background-color: var(--primary);
+    padding: 12px 15px 15px 15px;
+    padding-left: 18px;
     width: 230px;
     display: none;
     float: left;
+    border-right: 3px solid black;
 }
 .pageTitle p {
     padding: 0;
@@ -124,16 +131,16 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     text-decoration: none;
 }
 .pageTitleTitle {
-    font-size: 24px;
+    font-size: 1.7rem;
 }
 .pageTitleSubtitle {
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 /* Top Nav */
 
 .topNav {
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
     display: none;
     margin: 0;
 }
@@ -142,7 +149,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
 }
 .topNav ul li {
     float: left;
@@ -159,9 +166,8 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     width: 25px;
 }
 .topNav .nav-item:hover {
-    background-color: rgba(60,60,60,1);
+    background-color: var(--secondary);
 }
-
 /* Main Content */
 
 main {
@@ -223,7 +229,7 @@ header h1 {
     font-size: 1.3rem;
 }
 .homeCard {
-    background-color: rgba(200,200,200,1);
+    background-color: var(--secondary);
     padding: 1rem;
     border-radius: 15px;
     margin: 20px auto 10px auto;
@@ -236,7 +242,7 @@ header h1 {
 }
 .homeCard:hover {
     text-decoration: none;
-    color: rgba(60,60,60,1);
+    color: var(--primary);
 }
 .homeCard:hover img {
     animation-name: pop;
@@ -279,7 +285,7 @@ header h1 {
     flex-basis: 80%;
     flex-shrink: 1;
     border-radius: 15px;
-    background-color: rgba(90,90,90,1);
+    background-color: var(--secondary);
     border: 2px solid Black;
     padding: 0;
     overflow: hidden;
@@ -291,24 +297,25 @@ header h1 {
     text-decoration: none;
 }
 .homeCalcContainer > a:hover h3 {
-    color: rgba(200,200,200,1);
+    color: var(--secondary);
 }
 .homeCalcContainer > a p {
     padding: 15px;
 }
 .calculatorCard {
     border-radius: 15px;
-    background-color: rgba(90,90,90,1);
+    background-color: var(--secondary);
     border: 2px solid Black;
     padding: 0;
     margin: 15px;
     overflow: hidden;
-    color: white;
+    color: black;
 }
 .calculatorCardHeader {
-    background-color: rgba(60,60,60,1);
+    background-color: var(--primary);
     padding: 10px 15px 5px 15px;
     border-bottom: 2px solid black;
+    color: white;
 }
 .calculatorCardHeader h3 {
     font-size: 1.6rem;
@@ -331,7 +338,7 @@ blockquote {
 }
 .calcResult {
     color: white;
-    background-color: rgba(60,60,60,1);
+    background-color: var(--primary);
     margin: 10px 0 0 0 !important;
     padding: 3px 6px !important;
     border: 1px solid black;
@@ -367,11 +374,11 @@ input:valid + span::before, input:valid + label + span::before {
     flex-basis: 50%;
     flex-shrink: 1;
     flex-grow: 1;
-    background-color: rgba(90,90,90,1);
+    background-color: var(--secondary);
     border: 2px solid Black;
     padding: 0;
     overflow: hidden;
-    color: white;
+    color: black;
     display: block;
 }
 .foodsList > div:nth-Child(1) {
@@ -431,7 +438,7 @@ footer img {
     width: 25px;
 }
 footer .nav-item:hover {
-    background-color: rgba(60,60,60,1);
+    background-color: var(--primary);
 }
 
 
@@ -494,7 +501,7 @@ header h1 {
     display: inline;
 }
 .sideNav {
-    background-color: rgba(110,110,110,1);
+    background-color: var(--primary);
     padding-right: 0;
     width: 230px;
     margin: 0;
