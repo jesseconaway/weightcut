@@ -138,40 +138,7 @@
     <main>
       <div class="row">
         <div class="col col-12 col-xl-9">
-            <!-- Starting of ajax contact form -->
-<form class="contact__form" method="post" action="mail.php">
-    <!-- Starting of successful form message -->
-    <div class="row">
-        <div class="col-12">
-            <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                Your message was sent successfully.
-            </div>
-        </div>
-    </div>
-    <!-- Ending of successful form message -->
 
-    <!-- Element of the ajax contact form -->
-    <div class="row">
-        <div class="col-md-6 form-group">
-            <input name="name" type="text" class="form-control" placeholder="Name" required>
-        </div>
-        <div class="col-md-6 form-group">
-            <input name="email" type="email" class="form-control" placeholder="Email" required>
-        </div>
-        <div class="col-md-12 form-group">
-            <input name="subject" type="text" class="form-control" placeholder="Subject" required>
-        </div>
-        <div class="col-12 form-group">
-            <textarea name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
-        </div>
-        <div class="col-12">
-            <label for="test"><strong>Security Question:</strong><br>What is 4+3?</label><br>
-            <input name="test" type="number" id="emailValidation" required>
-            <input name="submit" id="emailSubmit" type="submit" class="btn btn-outline-success" value="Send Message" disabled="true">
-        </div>
-    </div>
-</form>
-<!-- Ending of ajax contact form -->
         </div>
       </div>
     </main>
@@ -202,60 +169,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
-    <script>
-
-        var security = document.getElementbyId("emailValidation");
-        var securityVal = document.getElementbyId("emailValidation").value;
-        var submit = document.getElementbyId("emailSubmit");
-
-        security.addEventListener("input", function() {
-            if (securityVal == 7) {
-                submit.setAttribute("disabled", false);
-            } else if (securityVal !== 7) {
-                submit.setAttribute("disabled", true)
-            }
-        })
-
-        (function ($) {
-            'use strict';
-        
-            var form = $('.contact__form'),
-                message = $('.contact__msg'),
-                form_data;
-        
-            // Success function
-            function done_func(response) {
-                message.fadeIn()
-                message.html(response);
-                setTimeout(function () {
-                    message.fadeOut();
-                }, 5000);
-                
-                form.find('input:not([type="submit"]), textarea').val('');
-            }
-        
-            // fail function
-            function fail_func(data) {
-                message.fadeIn()
-                message.html(data.responseText);
-                setTimeout(function () {
-                    message.fadeOut(5000);
-                }, 5000);
-            }
-            
-            form.submit(function (e) {
-                e.preventDefault();
-                form_data = $(this).serialize();
-                $.ajax({
-                    type: 'POST',
-                    url: form.attr('action'),
-                    data: form_data
-                })
-                .done(done_func)
-                .fail(fail_func);
-            });
-        })(jQuery);
-        
-        </script>
   </body>
 </html>
