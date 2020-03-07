@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6, h1 small, h1 a, h2 a, h3 a {
     background-color: rgba(0,0,0,0.6)
 }
 .dropdown-indicator {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     margin-left: 7px;
     height: 14px;
     width: 10px;
